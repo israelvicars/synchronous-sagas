@@ -13,14 +13,24 @@ class App extends Component {
   }
 
   handleClick() {
+    const alfaTimeout = 0;
+    const bravoTimeout = 0;
+    const combinedTimeout = alfaTimeout + bravoTimeout;
+
     console.log("handle increment alfa");
-    setTimeout( () => console.log('handle increment alfa after 0'), 0);
-    this.props.incrementAlfa();
+    setTimeout( () => {
+      console.log(`handle increment alfa after ${alfaTimeout}`);
+      this.props.incrementAlfa();
+    }, alfaTimeout);
+
     console.log("handle increment bravo");
-    setTimeout( () => console.log('handle increment bravo after 0'), 0);
-    this.props.incrementBravo();
+    setTimeout( () => {
+      console.log(`handle increment bravo after ${bravoTimeout}`);
+      this.props.incrementBravo();
+    }, bravoTimeout);
+
     console.log("all increments handled");
-    setTimeout( () => console.log('all increments handled after 0'), 0);
+    setTimeout( () => console.log(`all increments handled after ${combinedTimeout}`), combinedTimeout);
   }
 
   render() {
